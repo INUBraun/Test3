@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scene/Graduated_Scene/Middle/MidCenterCube.unity
+  isLoaded: 1
+  isActive: 1
