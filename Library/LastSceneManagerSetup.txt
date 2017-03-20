@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/YongJu/Scene/Graduated_Scene/Middle/MidCenterCube.unity
+- path: Assets/YongJu/Scene/Graduated_Scene/StartCube.unity
   isLoaded: 1
   isActive: 1

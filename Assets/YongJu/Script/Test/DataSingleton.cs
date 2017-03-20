@@ -22,9 +22,9 @@ public class DataSingleton : MonoBehaviour
     // //  데이터 저장용 싱글톤 실제 객체 생성
     public int currentCube;
     public int currnetPosition;
+    public int currentRotateSetX;
+    public int currentRotateSetZ;
     public rotateCubeStruct[] nowRotateData = new rotateCubeStruct[27]; // 큐브 각각의 데이터 저장할 구조체 27개 생성
-    public rotateCubeStruct[][] nowRotateSetX = new rotateCubeStruct[3][];
-    public rotateCubeStruct[][] nowRotateSetZ = new rotateCubeStruct[3][];
 }
 
 [System.Serializable]
