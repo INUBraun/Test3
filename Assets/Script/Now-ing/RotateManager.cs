@@ -25,6 +25,7 @@ public class RotateManager : MonoBehaviour {
     {
         isRotateGo = false;
         cubeObject.transform.parent = null;
+        player.transform.parent = null;
     }
 
     public Vector3 GetRotateVector()
@@ -47,12 +48,15 @@ public class RotateManager : MonoBehaviour {
 
         if (!isRotateGo)
         {
+            //Debug.Log(isRangeIN +"==="+isPlayerSeeDoor);
             if (isRangeIN && isPlayerSeeDoor)
             {
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
+                    Debug.Log("buttondown");
                     rotateVector = closeCheckScript.GetRotateVector();
                     cubeObject.transform.parent = this.transform;
+                    player.transform.parent = this.transform;
                     isRotateGo = true;
                 }
             }

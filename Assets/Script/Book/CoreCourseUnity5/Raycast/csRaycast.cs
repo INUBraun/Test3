@@ -3,7 +3,7 @@ using System.Collections;
 
 public class csRaycast : MonoBehaviour
 {
-    private float speed = 5.0f;
+    //private float speed = 5.0f;
 
     void Update()
     {

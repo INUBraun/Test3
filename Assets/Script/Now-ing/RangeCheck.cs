@@ -32,6 +32,5 @@ public class RangeCheck : MonoBehaviour
             else
                 isRangeIN = false;
         }
-        //Debug.Log("isRangeIN : " + isRangeIN);
     }
 }

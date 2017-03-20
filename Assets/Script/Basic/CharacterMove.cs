@@ -14,8 +14,6 @@ public class CharacterMove : MonoBehaviour
     float yVelocity = 0.0f;
 
     int count_jump = 0;
-    float jump_gauge = 10;
-    float jump_gravity = -2.0f;
 
     void Start()
     {
