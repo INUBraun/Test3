@@ -19,27 +19,22 @@ public class DataSingleton : MonoBehaviour
         return SingletonInstance;// 인스턴스가 존재하면서 그 존재하는 인스턴스를 리턴 -> 다른 스크립트에서 참조 때 이부분이 실행	
     }
 
-    // //  데이터 저장용 싱글톤 실제 객체 생성
-    public int currentCube;
-    public int currnetPosition;
-    public int currentRotateSetX;
-    public int currentRotateSetZ;
-    public rotateCubeStruct[] nowRotateData = new rotateCubeStruct[27]; // 큐브 각각의 데이터 저장할 구조체 27개 생성
+    // //  데이터 저장용 싱글톤 실제 변수 생성
+    public int currentCube;         // 현재 플레이어가 있는 큐브의 상대 넘버
+    public int currnetPosition;     // 현재 플레이어가 있는 큐브의 절대적 위치값, 즉 구조체의 배열 순서값
+    public int currentRotateSetX;   // 현재 플레이어가 있는 큐브가 X축 집합(x0, x1, x2) 중 몇 번 집합 
+    public int currentRotateSetZ;   // 현재 플레이어가 있는 큐브가 X축 집합(z0, z1, z2) 중 몇 번 집합
+    // 큐브 절대적 위치의 각각의 데이터 저장할 구조체 27개 생성
+    public rotateCubeAbsoluteStruct[] nowRotateData = new rotateCubeAbsoluteStruct[27];
+    // 큐브의 상태를 저장할 27개의 구조체 객체 생성
+    public rotateCubeStatusStruct[] nowStatusData = new rotateCubeStatusStruct[27];
 }
 
 [System.Serializable]
-public struct rotateCubeStruct
+public struct rotateCubeAbsoluteStruct
 {
-    public int cubeNum;
-    public int countRotateX;
-    public int countRotateZ;
+    public int cubeNum;             // 큐브의 상태 넘버
 
-    public int upCubeNum;
-    public int downCubeNum;
-    public int leftCubeNum;
-    public int rightCubeNum;
-    public int forwardCubeNum;
-    public int backCubeNum;
     // 각 큐브에서 연결된 방의 위치값들이
     // 현재 있는 큐브 값 R 을 기준으로
     // up           (R - 9) < 0  -> -1          R - 9
@@ -49,4 +44,16 @@ public struct rotateCubeStruct
     // forwrad      (R % 9) == 0 1 2 -> -1
     // back         (R % 9) == 6 7 8 -> -1
     // 음수값이 나오는 경우는 연결된 큐브가 없음
+    public int upCubeNum;
+    public int downCubeNum;
+    public int leftCubeNum;
+    public int rightCubeNum;
+    public int forwardCubeNum;
+    public int backCubeNum;
+}
+[System.Serializable]
+public struct rotateCubeStatusStruct
+{
+    public int countRotateX;        // x축 회전 값
+    public int countRotateZ;        // z축 회전 값
 }

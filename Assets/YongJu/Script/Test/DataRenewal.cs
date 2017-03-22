@@ -11,58 +11,70 @@ public class DataRenewal : MonoBehaviour
     public void ChangeCube(bool isX, bool isZ, float countX, float countZ)
     {
         // 정면 회전 x 90 / 후면 회전 x -90
-        // 좌측 회전 z 90 / 우측 회전 z -90
+        // 좌측면 회전 z 90 / 우측면 회전 z -90
         int cPosition = DataSingleton.Singleton().currnetPosition;
         int tmp;
-        if (isX)
+        int setxz;
+
+        if (isZ)
         {
-            if(DataSingleton.Singleton().currentRotateSetX == 0)
+            setxz = DataSingleton.Singleton().currentRotateSetX;
+            if (countZ > 0)
             {
-                if(countZ> 0)
-                {
-                    tmp = DataSingleton.Singleton().nowRotateData[1].cubeNum;
-                    DataSingleton.Singleton().nowRotateData[1].cubeNum = DataSingleton.Singleton().nowRotateData[14].cubeNum;
-                    DataSingleton.Singleton().nowRotateData[14].cubeNum = DataSingleton.Singleton().nowRotateData[19].cubeNum;
-                    DataSingleton.Singleton().nowRotateData[19].cubeNum = DataSingleton.Singleton().nowRotateData[12].cubeNum;
-                    DataSingleton.Singleton().nowRotateData[12].cubeNum = tmp;
-                    tmp = DataSingleton.Singleton().nowRotateData[0].cubeNum = DataSingleton.Singleton().nowRotateData[0].cubeNum;
-                    DataSingleton.Singleton().nowRotateData[0].cubeNum = DataSingleton.Singleton().nowRotateData[2].cubeNum;
-                    DataSingleton.Singleton().nowRotateData[2].cubeNum = DataSingleton.Singleton().nowRotateData[20].cubeNum;
-                    DataSingleton.Singleton().nowRotateData[20].cubeNum = DataSingleton.Singleton().nowRotateData[18].cubeNum;
-                    DataSingleton.Singleton().nowRotateData[18].cubeNum = tmp;
-
-                }
-                else
-                {
-
-                }
-            }
-            else if (DataSingleton.Singleton().currentRotateSetX == 1)
-            {
-                if (countZ > 0)
-                {
-
-                }
-                else
-                {
-
-                }
+                tmp = DataSingleton.Singleton().nowRotateData[setxz + 1].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 1].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 11].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 11].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 19].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 19].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 9].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 9].cubeNum = tmp;
+                tmp = DataSingleton.Singleton().nowRotateData[setxz + 0].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 0].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 2].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 2].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 20].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 20].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 18].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 18].cubeNum = tmp;
             }
             else
             {
-                if (countZ > 0)
-                {
-
-                }
-                else
-                {
-
-                }
+                tmp = DataSingleton.Singleton().nowRotateData[setxz * 3 + 1].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 1].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 9].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 9].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 19].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 19].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 11].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 11].cubeNum = tmp;
+                tmp = DataSingleton.Singleton().nowRotateData[setxz * 3 + 0].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 0].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 18].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 18].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 20].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 20].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 2].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 2].cubeNum = tmp;
             }
         }
-        else if (isZ)
+        else if (isX)
         {
-
+            setxz = DataSingleton.Singleton().currentRotateSetX;
+            if (countX > 0)
+            {
+                tmp = DataSingleton.Singleton().nowRotateData[setxz * 3 + 1].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 1].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 11].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 11].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 19].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 19].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 9].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 9].cubeNum = tmp;
+                tmp = DataSingleton.Singleton().nowRotateData[setxz * 3 + 0].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 0].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 2].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 2].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 20].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 20].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 18].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 18].cubeNum = tmp;
+            }
+            else
+            {
+                tmp = DataSingleton.Singleton().nowRotateData[setxz * 3 + 1].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 1].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 9].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 9].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 19].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 19].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 11].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 11].cubeNum = tmp;
+                tmp = DataSingleton.Singleton().nowRotateData[setxz * 3 + 0].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 0].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 18].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 18].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 20].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 20].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 2].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz * 3 + 2].cubeNum = tmp;
+            }
         }
     }
 
@@ -109,8 +121,8 @@ public class DataRenewal : MonoBehaviour
         for (int i = 0; i < 27; i++)
         {
             DataSingleton.Singleton().nowRotateData[i].cubeNum = i;
-            DataSingleton.Singleton().nowRotateData[i].countRotateX = 0;
-            DataSingleton.Singleton().nowRotateData[i].countRotateZ = 0;
+            DataSingleton.Singleton().nowStatusData[i].countRotateX = 0;
+            DataSingleton.Singleton().nowStatusData[i].countRotateZ = 0;
 
             if ((i - 9) < 0)
             {
@@ -166,22 +178,5 @@ public class DataRenewal : MonoBehaviour
                 DataSingleton.Singleton().nowRotateData[i].backCubeNum = i + 3;
             }
         }
-
-        //for (int i = 0; i < 3; i++)
-        //{
-        //    DataSingleton.Singleton().nowRotateSetX[i] = new rotateCubeStruct[9];
-        //    DataSingleton.Singleton().nowRotateSetZ[i] = new rotateCubeStruct[9];
-        //
-        //    for (int j = 0; j < 3; j++)
-        //    {
-        //        DataSingleton.Singleton().nowRotateSetX[i][j * 3 + 0] = DataSingleton.Singleton().nowRotateData[i * 3 + j * 9 + 0];
-        //        DataSingleton.Singleton().nowRotateSetX[i][j * 3 + 1] = DataSingleton.Singleton().nowRotateData[i * 3 + j * 9 + 1];
-        //        DataSingleton.Singleton().nowRotateSetX[i][j * 3 + 2] = DataSingleton.Singleton().nowRotateData[i * 3 + j * 9 + 2];
-        //
-        //        DataSingleton.Singleton().nowRotateSetZ[i][j * 3 + 0] = DataSingleton.Singleton().nowRotateData[i + j * 9 + 0];
-        //        DataSingleton.Singleton().nowRotateSetZ[i][j * 3 + 1] = DataSingleton.Singleton().nowRotateData[i + j * 9 + 3];
-        //        DataSingleton.Singleton().nowRotateSetZ[i][j * 3 + 2] = DataSingleton.Singleton().nowRotateData[i + j * 9 + 6];
-        //    }
-        //}
     }
 }
