@@ -21,36 +21,6 @@ public class DataRenewal : MonoBehaviour
             setxz = DataSingleton.Singleton().currentRotateSetX;
             if (countZ > 0)
             {
-                tmp = DataSingleton.Singleton().nowRotateData[setxz + 1].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz + 1].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 11].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz + 11].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 19].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz + 19].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 9].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz + 9].cubeNum = tmp;
-                tmp = DataSingleton.Singleton().nowRotateData[setxz + 0].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz + 0].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 2].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz + 2].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 20].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz + 20].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 18].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz + 18].cubeNum = tmp;
-            }
-            else
-            {
-                tmp = DataSingleton.Singleton().nowRotateData[setxz * 3 + 1].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz * 3 + 1].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 9].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz * 3 + 9].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 19].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz * 3 + 19].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 11].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz * 3 + 11].cubeNum = tmp;
-                tmp = DataSingleton.Singleton().nowRotateData[setxz * 3 + 0].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz * 3 + 0].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 18].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz * 3 + 18].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 20].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz * 3 + 20].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 2].cubeNum;
-                DataSingleton.Singleton().nowRotateData[setxz * 3 + 2].cubeNum = tmp;
-            }
-        }
-        else if (isX)
-        {
-            setxz = DataSingleton.Singleton().currentRotateSetX;
-            if (countX > 0)
-            {
                 tmp = DataSingleton.Singleton().nowRotateData[setxz * 3 + 1].cubeNum;
                 DataSingleton.Singleton().nowRotateData[setxz * 3 + 1].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 11].cubeNum;
                 DataSingleton.Singleton().nowRotateData[setxz * 3 + 11].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 19].cubeNum;
@@ -74,6 +44,36 @@ public class DataRenewal : MonoBehaviour
                 DataSingleton.Singleton().nowRotateData[setxz * 3 + 18].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 20].cubeNum;
                 DataSingleton.Singleton().nowRotateData[setxz * 3 + 20].cubeNum = DataSingleton.Singleton().nowRotateData[setxz * 3 + 2].cubeNum;
                 DataSingleton.Singleton().nowRotateData[setxz * 3 + 2].cubeNum = tmp;
+            }
+        }
+        else if (isX)
+        {
+            setxz = DataSingleton.Singleton().currentRotateSetX;
+            if (countX > 0)
+            {
+                tmp = DataSingleton.Singleton().nowRotateData[setxz + 3].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 3].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 15].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 15].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 21].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 21].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 9].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 9].cubeNum = tmp;
+                tmp = DataSingleton.Singleton().nowRotateData[setxz + 0].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 0].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 6].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 6].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 24].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 24].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 18].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 18].cubeNum = tmp;
+            }
+            else
+            {
+                tmp = DataSingleton.Singleton().nowRotateData[setxz + 3].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 3].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 9].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 9].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 21].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 21].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 15].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 15].cubeNum = tmp;
+                tmp = DataSingleton.Singleton().nowRotateData[setxz + 0].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 0].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 18].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 18].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 24].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 24].cubeNum = DataSingleton.Singleton().nowRotateData[setxz + 6].cubeNum;
+                DataSingleton.Singleton().nowRotateData[setxz + 6].cubeNum = tmp;
             }
         }
     }
